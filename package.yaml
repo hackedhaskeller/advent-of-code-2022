@@ -19,6 +19,7 @@ dependencies:
   - shakespeare
   - text
   - transformers
+  - unordered-containers
 
 default-extensions:
   - NoImplicitPrelude
