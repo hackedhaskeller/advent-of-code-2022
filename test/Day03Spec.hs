@@ -1,12 +1,12 @@
 {-# LANGUAGE QuasiQuotes #-}
 {-# LANGUAGE TemplateHaskell #-}
-module DayThreeSpec
+module Day03Spec
   ( spec
   ) where
 
 import TestImport
 
-import qualified DayThree
+import qualified Day03
 
 import qualified Prelude
 
@@ -14,7 +14,7 @@ import qualified Prelude
 
 spec :: Spec
 spec = do
-  fdescribe "Day Three" $ do
+  describe "Day Three" $ do
     let input = [st|vJrwpWtwJgWrhcsFMMfFFhFp
 jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
 PmmdzqPrVvPwwTWBwg
@@ -24,7 +24,7 @@ CrZsJsPPZsGzwwsLwLmpwMDw|]
     describe "Puzzle One" $ do
       describe "Simple Input" $ do
         describe "Ruck Sacks" $ do
-          let ruckSacks = DayThree.ruckSacks input
+          let ruckSacks = Day03.ruckSacks input
 
           it "Parses first ruck sack correctly" $ do
             let controlFirstRuckSack = "vJrwpWtwJgWrhcsFMMfFFhFp"
@@ -44,7 +44,7 @@ CrZsJsPPZsGzwwsLwLmpwMDw|]
                 controlContainerLeft = "vJrwpWtwJgWr"
                 controlContainerRight = "hcsFMMfFFhFp"
 
-                containers = DayThree.containers ruckSack
+                containers = Day03.containers ruckSack
 
             it "Parses the left side correctly" $ do
               let containerLeft = containers Prelude.!! 0
@@ -62,18 +62,18 @@ CrZsJsPPZsGzwwsLwLmpwMDw|]
                   containerRight = "hcsFMMfFFhFp"
 
               it "Finds common item type 'p'" $ do
-                let commonItemType = DayThree.commonItemType containerLeft containerRight
+                let commonItemType = Day03.commonItemType containerLeft containerRight
 
                 commonItemType `shouldBe` 'p'
 
               describe "Priority" $ do
                 it "'p' has priority of 16" $ do
-                  let priority = DayThree.priority 'p'
+                  let priority = Day03.priority 'p'
 
                   priority `shouldBe` 16
 
                 it "'P' has priority of 42" $ do
-                  let priority = DayThree.priority 'P'
+                  let priority = Day03.priority 'P'
 
                   priority `shouldBe` 42
 
@@ -88,7 +88,7 @@ CrZsJsPPZsGzwwsLwLmpwMDw|]
         it "Groups items in groups of three" $ do
           let sample = [1..9] :: [Int]
 
-              grouped = DayThree.groupsOfThree sample
+              grouped = Day03.groupsOfThree sample
 
               expectedGroups = [[1..3], [4..6], [7..9]] :: [[Int]]
 
@@ -96,7 +96,7 @@ CrZsJsPPZsGzwwsLwLmpwMDw|]
 
       describe "Simple Input" $ do
         describe "Elf Groups" $ do
-          let groups = DayThree.elfGroups input
+          let groups = Day03.elfGroups input
               firstGroup = groups Prelude.!! 0
 
           it "Correctly finds the first group" $ do
@@ -106,7 +106,7 @@ CrZsJsPPZsGzwwsLwLmpwMDw|]
 
           describe "Badges" $ do
             it "First groups badge is 'r'" $ do
-              let badge = DayThree.groupBadge firstGroup
+              let badge = Day03.groupBadge firstGroup
 
               badge `shouldBe` 'r'
 

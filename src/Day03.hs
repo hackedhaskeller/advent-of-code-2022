@@ -1,4 +1,4 @@
-module DayThree
+module Day03
   ( -- | Puzzles
     prioritySum
   , badgeSum
@@ -95,4 +95,4 @@ groupBadge elfs =
     fromJust . headMay $ Set.toList commonChars
 
 puzzleOneInput :: IO Text
-puzzleOneInput = Text.readFile "src/DayThree/puzzle_one_input.txt"
+puzzleOneInput = Text.readFile "src/Day03/puzzle_one_input.txt"

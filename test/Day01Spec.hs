@@ -1,12 +1,12 @@
 {-# LANGUAGE QuasiQuotes #-}
 {-# LANGUAGE TemplateHaskell #-}
-module DayOneSpec
+module Day01Spec
   ( spec
   ) where
 
 import TestImport
 
-import qualified DayOne
+import qualified Day01
 
 spec :: Spec
 spec = do
@@ -29,7 +29,7 @@ spec = do
     describe "Puzzle One" $ do
       describe "Simple Input" $ do
         it "Calculates that the Elf with the most calories has 24000" $ do
-          let highestElfCalories = DayOne.calculateHighestElfCalories input
+          let highestElfCalories = Day01.calculateHighestElfCalories input
 
               expectedHighestElfCalories = 24000
 
@@ -38,7 +38,7 @@ spec = do
     describe "Puzzle Two" $ do
       describe "Simple Input" $ do
         it "Calculates the highest three calories are 45000" $ do
-          let highestThree = DayOne.calculateHighestThreeElfCalories input
+          let highestThree = Day01.calculateHighestThreeElfCalories input
 
               expectedHighestThree = 45000
 

@@ -1,4 +1,4 @@
-module DayOne
+module Day01
   ( calculateHighestElfCalories
   , calculateHighestThreeElfCalories
   , puzzleOneInput
@@ -40,4 +40,4 @@ toElfCalories input =
     (fmap . fmap) readText elfCaloriesText
 
 puzzleOneInput :: IO Text
-puzzleOneInput = Text.readFile "src/DayOne/puzzle_one_input.txt"
+puzzleOneInput = Text.readFile "src/Day01/puzzle_one_input.txt"

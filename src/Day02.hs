@@ -1,4 +1,4 @@
-module DayTwo
+module Day02
   ( calculatePoints
   , puzzleOneInput
   , calculateActualStrategyPoints
@@ -130,4 +130,4 @@ loss :: Int
 loss = 0
 
 puzzleOneInput :: IO Text
-puzzleOneInput = Text.readFile "src/DayTwo/puzzle_one_input.txt"
+puzzleOneInput = Text.readFile "src/Day02/puzzle_one_input.txt"
