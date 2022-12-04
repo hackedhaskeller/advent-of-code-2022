@@ -18,6 +18,7 @@ module Day03
 
 import Import
 
+import qualified Data.HashMap.Strict as Map
 import qualified Data.HashSet as Set
 import qualified Data.List as List
 import qualified Data.Text as Text
@@ -53,15 +54,12 @@ commonItemType left right =
 priority :: Char -> Int
 priority = score
 
-itemScores :: [(Char, Int)]
-itemScores = zip (join [['a'..'z'],['A'..'Z']]) [1..]
+itemScores :: Map.HashMap Char Int
+itemScores = Map.fromList $ zip (join [['a'..'z'],['A'..'Z']]) [1..]
 
 score :: Char -> Int
 score score' =
-  let scoreTuple = fromJust $ find (\(l, _) -> l==score') itemScores
-  in
-    snd scoreTuple
-
+  fromJust $ Map.lookup score' itemScores
 
 badgeSum :: Text -> Int
 badgeSum input =
